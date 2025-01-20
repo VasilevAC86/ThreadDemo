@@ -11,6 +11,7 @@ namespace ThreadDemo
         public static void DoSomePrint(object _lock, string text)
         {
             lock (_lock) // lock не запускает поток, пока выполняется условие, в коде ниже работает как блокировка
+                         // (исп. для предотвращении потери данных при работе с ДБ, пока передача не прошла, новая не начинается)
             {
                 try
                 {
